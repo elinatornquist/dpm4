@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.flex-item {
+    background-color: darkseagreen;
+    width: 100px;
+    height: 50px;
+    padding: 2rem;
+    border: 2px solid black;
+}
+
+.navigation {
+    list-style: none;
+    display: flex;
+
+    background-color: burlywood;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    justify-content: space-around;
+    align-content: flex-start;
+}
+
+.navigation li {
+    background-color: cornflowerblue;
+    color: cornsilk;
+    padding: 5px 15px;
+    margin: 10px;
+}
+
+.site-header .container {
+    display: flex;
+}
+
+.grid {
+    background-color: crimson;
+    display: grid;
+    height: 100vh;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}
+.item {
+    background-color: cyan;
+    width: 300px;
+    height: 300px;
+
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 4;
+
+    justify-self: center;
+    align-self: center;
+}
+
+
+@media (max-width: 768px) {
+    .navigation {
+        flex-direction: column;
+    }
+}
+
+.grid-2 {
+    background-color: hotpink;
+    display: grid;
+    height: 100vh;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+    grid-gap: 1rem;
+
+
+grid-template-areas:
+" . . . . . . . . . "
+" . X X . . Z Z Z . "
+" . X X . . Z Z Z . "
+" . X X . . Z Z Z . "
+" . . . . . Z Z Z . "
+" . . Y Y . Z Z Z . "
+" . . Y Y . Z Z Z . "
+" . . Y Y . Z Z Z . "
+" . . . . . . . . . "; 
+}
+
+.p1 {
+    grid-area: X;
+
+}
+.p2 {
+    grid-area: Y;
+}
+.p3 {
+    grid-area: Z;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+.product {
+    display: flex;
+    background-color: indigo;
+    padding: 10px;
+    flex-direction: column;
+    min-height: 20vh;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.product-image {
+    order: -1;
+}
+
+@media (max-width: 768px) {
+    .grid-2 {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-areas: 
+        "X"
+        "Y"
+        "Z";
+    }
+}
+
+
+
+
+
+
